@@ -2,6 +2,7 @@
 
 import styles from "./page.module.css";
 import { useEffect, useState } from "react";
+import Card from "./component/Card";
 
 export default function Home() {
   const [cards, setCards] = useState([]);
@@ -29,15 +30,15 @@ export default function Home() {
 
       <div className={styles.buttons}>
         <button className={styles.filter}>Monstros</button>
-        <button className={styles.filter}>Armadilhas</button>
-        <button className={styles.filter}>Magias</button>
       </div>
 
       <div className={styles.cardGrid}>
         {cards.map((card) => (
-          <div key={card.id} className={styles.card}>
-            <img src={card.card_images[0]?.image_url} alt={card.name} />
-          </div>
+          <Card
+            key={card.id}
+            image={card.card_images[0]?.image_url}
+            name={card.name}
+          />
         ))}
       </div>
     </main>
