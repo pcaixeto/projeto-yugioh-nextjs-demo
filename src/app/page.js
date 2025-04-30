@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import axios from "axios";
 
 export default function YugiohProdeckPage() {
   const [cards, setCards] = useState([]);
@@ -9,17 +8,14 @@ export default function YugiohProdeckPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Dark%20Magician")
-      .then((response) => {
-        setCards(response.data.data);
+    fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Dark%20Magician")
+      .then((res) => {
+        if (!res.ok) throw new Error("Erro na requisição");
+        return res.json();
       })
-      .catch((err) => {
-        setError(err.message);
-      })
-      .finally(() => {
-        setLoading(false);
-      });
+      .then((data) => setCards(data.data))
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <p>Carregando cards...</p>;
@@ -30,7 +26,6 @@ export default function YugiohProdeckPage() {
       <h1>Yu-Gi-Oh! Cards</h1>
       <ul>
         {cards.map((card) => {
-          // Pega a primeira imagem disponível
           const img = card.card_images?.[0]?.image_url;
           return (
             <li key={card.id} style={{ marginBottom: "2rem" }}>
