@@ -8,12 +8,12 @@ export default function YugiohProdeckPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?name=Dark%20Magician")
+    fetch("https://db.ygoprodeck.com/api/v7/cardinfo.php?type=Normal Monster")
       .then((res) => {
         if (!res.ok) throw new Error("Erro na requisição");
         return res.json();
       })
-      .then((data) => setCards(data.data))
+      .then((data) => setCards(data.data.slice(0, 8)))
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, []);
