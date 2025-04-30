@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import styles from "./page.module.css";
+import { useEffect, useState } from "react";
 
-export default function YugiohProdeckPage() {
+export default function Home() {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,33 +19,27 @@ export default function YugiohProdeckPage() {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Carregando cards...</p>;
+  if (loading) return <p>Carregando cartas...</p>;
   if (error) return <p>Erro: {error}</p>;
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <h1>Yu-Gi-Oh! Cards</h1>
-      <ul>
-        {cards.map((card) => {
-          const img = card.card_images?.[0]?.image_url;
-          return (
-            <li key={card.id} style={{ marginBottom: "2rem" }}>
-              <h2>{card.name}</h2>
-              {img && (
-                <img
-                  src={img}
-                  alt={card.name}
-                  style={{ width: "200px", height: "auto", display: "block" }}
-                />
-              )}
-              <p><strong>Tipo:</strong> {card.type}</p>
-              <p>{card.desc}</p>
-              {card.atk != null && <p><strong>ATK:</strong> {card.atk}</p>}
-              {card.def != null && <p><strong>DEF:</strong> {card.def}</p>}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <main className={styles.container}>
+      <h1 className={styles.title}>Cartas Yu-Gi-Oh</h1>
+      <p className={styles.subtitle}>Escolha uma carta para ver mais detalhes</p>
+
+      <div className={styles.buttons}>
+        <button className={styles.filter}>Monstros</button>
+        <button className={styles.filter}>Armadilhas</button>
+        <button className={styles.filter}>Magias</button>
+      </div>
+
+      <div className={styles.cardGrid}>
+        {cards.map((card) => (
+          <div key={card.id} className={styles.card}>
+            <img src={card.card_images[0]?.image_url} alt={card.name} />
+          </div>
+        ))}
+      </div>
+    </main>
   );
 }
