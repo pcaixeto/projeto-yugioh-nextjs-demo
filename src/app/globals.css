@@ -1,13 +1,15 @@
+/* Modo Claro */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffffcb; /* Azul elétrico para modo claro */
+  --foreground: #00014d; /* Branco puro para o texto */
+  --link-color: #8400ff; /* Roxo vibrante para links */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Modo Escuro */
+body.dark-mode {
+  --background: #190027; /* Preto escuro para modo escuro */
+  --foreground: #ffee00; /* Cinza claro para texto */
+  --link-color: #ff0000; /* Dourado para links no modo escuro */
 }
 
 html,
@@ -19,9 +21,7 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Zen Dots', sans-serif;
 }
 
 * {
@@ -31,8 +31,12 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--link-color); /* Links com roxo vibrante ou dourado */
   text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 @media (prefers-color-scheme: dark) {
