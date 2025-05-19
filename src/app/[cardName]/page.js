@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 
 export default async function CardDetail({ params }) {
-  const name = decodeURIComponent(params.cardName).replace(/-/g, ' ')
+  const name = decodeURIComponent(params.cardName)
   const res = await fetch(
     `https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${encodeURIComponent(name)}`
   )
