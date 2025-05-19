@@ -29,11 +29,6 @@ const Header = () => {
       <div className={styles.logo}>
         <img src="/images/logo-main.png" alt="Yu-Gi-Oh! Logo" className={styles.logoImage} />
       </div>
-      <nav className={styles.nav}>
-        <Link href="/">Home</Link>
-        <Link href="/cards">Cards</Link>
-        <Link href="/about">Sobre</Link>
-      </nav>
       <button className={styles.themeButton} onClick={toggleTheme}>
         <img
         src={isDarkMode ? '/icons/sun-svgrepo-com.svg' : '/icons/moon-svgrepo-com.svg'}
