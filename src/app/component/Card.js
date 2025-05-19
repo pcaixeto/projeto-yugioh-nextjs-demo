@@ -7,7 +7,6 @@ export default function Card({ image, name }) {
   return (
     <Link href={`/${slug}`} className={styles.card}>
       <img src={image} alt={name} />
-      <p>{name}</p>
     </Link>
   )
 }

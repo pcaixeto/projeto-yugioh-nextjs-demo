@@ -17,6 +17,9 @@ export default async function CardDetail({ params }) {
       <p><strong>Type:</strong> {card.type}</p>
       <p><strong>ATK:</strong> {card.atk}</p>
       <p><strong>DEF:</strong> {card.def}</p>
+      <p><strong>Level:</strong> {card.level}</p>
+      <p><strong>Attribute:</strong> {card.attribute}</p>
+      <p><strong>Card Code:</strong> {card.card_code}</p>
       <p>{card.desc}</p>
     </main>
   )
