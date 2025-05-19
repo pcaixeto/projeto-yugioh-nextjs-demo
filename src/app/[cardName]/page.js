@@ -2,7 +2,8 @@ import { notFound } from 'next/navigation'
 import styles from './page.module.css'
 
 export default async function CardDetail({ params }) {
-  const name = decodeURIComponent(params.cardName) // usamos decode e encodeURI pq os nomes das cartas vem cagado com espacos da API
+  // usamos decode e encodeURI pq os nomes das cartas chegam cagados (espaco branco, hifen etc) da API
+  const name = decodeURIComponent(params.cardName)
   const res = await fetch(
     `https://db.ygoprodeck.com/api/v7/cardinfo.php?name=${encodeURIComponent(name)}`
   )

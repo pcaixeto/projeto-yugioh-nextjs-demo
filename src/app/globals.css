@@ -1,15 +1,15 @@
 /* Modo Claro */
 :root {
-  --background: #ffffffcb; /* Azul elétrico para modo claro */
-  --foreground: #00014d; /* Branco puro para o texto */
-  --link-color: #8400ff; /* Roxo vibrante para links */
+  --background: #ffffffcb;
+  --foreground: #00014d;
+  --link-color: #8400ff;
 }
 
 /* Modo Escuro */
 body.dark-mode {
-  --background: #190027; /* Preto escuro para modo escuro */
-  --foreground: #ffee00; /* Cinza claro para texto */
-  --link-color: #ff0000; /* Dourado para links no modo escuro */
+  --background: #190027;
+  --foreground: #ffee00;
+  --link-color: #ff0000;
 }
 
 html,
@@ -31,7 +31,7 @@ body {
 }
 
 a {
-  color: var(--link-color); /* Links com roxo vibrante ou dourado */
+  color: var(--link-color);
   text-decoration: none;
 }
 
