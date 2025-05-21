@@ -26,16 +26,23 @@ const Header = () => {
   return (
     <header className={styles.header}>
         
-      <div className={styles.logo}>
-        <img src="/images/logo-main.png" alt="Yu-Gi-Oh! Logo" className={styles.logoImage} />
-      </div>
-      <button className={styles.themeButton} onClick={toggleTheme}>
-        <img
-        src={isDarkMode ? '/icons/sun-svgrepo-com.svg' : '/icons/moon-svgrepo-com.svg'}
-        alt={isDarkMode ? 'Modo Claro' : 'Modo Escuro'}
+      
+         <Link href="/">
+          <img
+            src="/images/logo-main.png"
+            alt="Yu-Gi-Oh! Logo"
+            className={styles.logoImage}
+          />
+        </Link>
+        <button className={styles.themeButton} onClick={toggleTheme}>
+          <img
+            src={isDarkMode ? '/icons/sun-svgrepo-com.svg' : '/icons/moon-svgrepo-com.svg'}
+            alt={isDarkMode ? 'Modo Claro' : 'Modo Escuro'}
             className={styles.icon}
-        />
-      </button>
+          />
+        </button>
+      
+      
     </header>
   );
 };

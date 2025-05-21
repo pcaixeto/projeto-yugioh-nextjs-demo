@@ -6,14 +6,20 @@
   padding: 0 4rem;
   height: 80px;
   border-bottom: 2px solid #fff;
+  
 }
 
 .logoImage {
   max-height: 60px;
+  
   width: auto;
   object-fit: contain;
+  cursor: pointer;
+  display:block;
 }
-
+.logoImage, .themeButton {
+  display: inline-block;
+}
 .themeButton {
   background-color: #0070f3;
   color: #fff;
