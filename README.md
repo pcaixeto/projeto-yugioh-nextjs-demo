@@ -85,8 +85,8 @@ Aplicação Next.js que consome a API Yu-Gi-Oh (db.ygoprodeck.com) para listar c
 ### 4. src/app/component/Footer.js
 * **Objetivo:** Renderiza o footer da pagina com texto centralizado.
 
-#### CSS Modules (`Footer.module.css`)
-* `.footer`: barra fixa de fundo preto com texto branco centralizado, padding vertical, fonte pequena, borda superior sutil e margem superior para separar do conteúdo.
+* **CSS Modules (`Footer.module.css`):**
+  * `.footer`: barra fixa de fundo preto com texto branco centralizado, padding vertical, fonte pequena, borda superior sutil e margem superior para separar do conteúdo.
 
 ## Scripts Disponíveis
 
