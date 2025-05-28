@@ -4,6 +4,8 @@
 
 Aplicação Next.js que consome a API Yu-Gi-Oh ([db.ygoprodeck.com](https://db.ygoprodeck.com)) para listar cartas e exibir detalhes individuais.
 
+O site está no ar rodando no link https://projeto-yugioh-nextjs-demo.vercel.app/
+
 ## Tecnologias
 
 * Next.js 15.3 (App Router)
