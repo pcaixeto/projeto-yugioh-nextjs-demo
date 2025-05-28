@@ -66,6 +66,28 @@ Aplicação Next.js que consome a API Yu-Gi-Oh (db.ygoprodeck.com) para listar c
   * `.description`: texto corrido com `line-height`.
   * *Media queries* para responsividade (tablets e mobile).
 
+  ### 3. src/app/component/Header.js
+
+* **Objetivo:**
+  1. Renderizar cabeçalho com logo clicável (`/`) e botão de tema.
+  2. Estado `isDarkMode` via `useState`.
+  3. Em `useEffect`, ler `theme` de `localStorage` ou preferência de sistema.
+  4. `toggleTheme()` inverte `isDarkMode`, salva em `localStorage` e adiciona/remove classe `dark-mode` no `<body>`.
+  5. Navegação interna via `<Link>` do Next.js.
+
+* **CSS Modules (`Header.module.css`):**
+
+  * `.header`: contêiner flex do header com fundo preto, padding lateral e borda inferior; em tablets/mobile ajusta padding, altura e passa para coluna no mobile.  
+  * `.logoImage`: logo responsiva (max-height, object-fit) com cursor pointer; reduz altura em tablets e mobile.  
+  * `.themeButton`: botão de troca de tema com fundo azul, texto branco, bordas arredondadas e cursor pointer; realinha no mobile.  
+  * `.icon`: ícone com tamanho padrão, transição suave e leve zoom no hover; dimensões menores em tablets.  
+
+### 4. src/app/component/Footer.js
+* **Objetivo:** Renderiza o footer da pagina com texto centralizado.
+
+#### CSS Modules (`Footer.module.css`)
+* `.footer`: barra fixa de fundo preto com texto branco centralizado, padding vertical, fonte pequena, borda superior sutil e margem superior para separar do conteúdo.
+
 ## Scripts Disponíveis
 
 ```bash
