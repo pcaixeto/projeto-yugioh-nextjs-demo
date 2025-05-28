@@ -33,8 +33,10 @@ const Header = () => {
         src={isDarkMode ? '/icons/sun-svgrepo-com.svg' : '/icons/moon-svgrepo-com.svg'}
         alt={isDarkMode ? 'Modo Claro' : 'Modo Escuro'}
             className={styles.icon}
-        />
-      </button>
+          />
+        </button>
+      
+      
     </header>
   );
 };
