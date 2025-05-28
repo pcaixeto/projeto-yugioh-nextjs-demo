@@ -22,7 +22,7 @@ Aplicação Next.js que consome a API Yu-Gi-Oh ([db.ygoprodeck.com](https://db.y
      * Título (`<h1>`) com classe `.title`.
      * Subtítulo (`<p>`) com classe `.subtitle`.
      * Botão de filtro (`<button>`) com classe `.filter`.
-     * Grade de cartas (`<div>`) usando o componente `<Card />`, com layout em grid via `.cardGrid`.
+     * Grade de cartas (`<section>`) usando o componente `<Card />`, com layout em grid via `.cardGrid`.
 
 * **CSS Modules (`page.module.css`):**
 
@@ -48,13 +48,13 @@ Aplicação Next.js que consome a API Yu-Gi-Oh ([db.ygoprodeck.com](https://db.y
 * **Objetivo:**
 
   1. Recebe `params.cardName`, decodifica espaços e caracteres especiais.
-  2. Faz fetch à API para obter detalhes da carta específica.
+  2. Faz fetch no endpoint para obter detalhes da carta específica.
   3. Em caso de falha, invoca `notFound()` para 404.
   4. Renderiza:
 
      * Nome (`<h1>`) com classe `.title`.
      * Imagem principal (`<img>`) com classe `.image`.
-     * Atributos (Type, ATK, DEF, Level, Attribute, Card Code) num contêiner `.details`.
+     * Atributos (`<section>`) (Type, ATK, DEF, Level, Attribute, Card Code) num contêiner `.details`.
      * Descrição completa em `<p>` com classe `.description`.
 
 * **CSS Modules (`page.module.css`):**
@@ -91,8 +91,7 @@ Aplicação Next.js que consome a API Yu-Gi-Oh ([db.ygoprodeck.com](https://db.y
 ## Scripts Disponíveis
 
 ```bash
-npm run dev    # Inicia o servidor de desenvolvimento
+npm run dev    # Inicia o servidor de desenvolvimento (unico usado)
 npm run build  # Gera build de produção
 npm run start  # Executa em produção
-npm run lint   # Roda ESLint
 ```
