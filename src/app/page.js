@@ -28,11 +28,11 @@ export default function Home() {
       <h1 className={styles.title}>Cartas Yu-Gi-Oh</h1>
       <p className={styles.subtitle}>Escolha uma carta para ver mais detalhes</p>
 
-      <div className={styles.buttons}>
+      <nav className={styles.buttons}>
         <button className={styles.filter}>Monstros</button>
-      </div>
+      </nav>
 
-      <div className={styles.cardGrid}>
+      <section className={styles.cardGrid}>
         {cards.map((card) => (
           <Card
             key={card.id}
@@ -40,7 +40,7 @@ export default function Home() {
             name={card.name}
           />
         ))}
-      </div>
+      </section>
     </main>
   );
 }

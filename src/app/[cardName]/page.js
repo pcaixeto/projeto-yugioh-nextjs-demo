@@ -18,14 +18,14 @@ return (
       <img className={styles.image}
            src={card.card_images[0].image_url}
            alt={card.name} />
-      <div className={styles.details}>
+      <section className={styles.details}>
         <p><strong>Type:</strong> {card.type}</p>
         <p><strong>ATK:</strong> {card.atk}</p>
         <p><strong>DEF:</strong> {card.def}</p>
         <p><strong>Level:</strong> {card.level}</p>
         <p><strong>Attribute:</strong> {card.attribute}</p>
         <p><strong>Card Code:</strong> {card.card_code}</p>
-      </div>
+      </section>
       <p className={styles.description}>{card.desc}</p>
     </main>
   )
